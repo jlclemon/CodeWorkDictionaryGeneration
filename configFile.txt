@@ -9,14 +9,14 @@ imageList
 
 
 -dicFileBase
-dictionaryFile_AllObjects
-dictionaryFile_CarPerson
+dictionaryFile_AllObjects_CV_2_4
+#dictionaryFile_CarPerson
 
 -dicFileExt
 .yml
 
 -dicSize
-100
+15
 
 -imageList
 /home/jlclemon/Documents/visionData/visionData/SP/train/allobjects/imageList.txt

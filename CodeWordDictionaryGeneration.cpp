@@ -407,8 +407,9 @@ void parseParamsVector(vector<string> & commandArgs,CodeWordGenerationInfo & inf
 		if(commandArgs[i].compare("-outputFeatureFileList")==0 || commandArgs[i].compare("-OutputFeatureFileList")==0)
 		{
 
-			if(commandArgs[i+1].compare("Y")==0 || commandArgs[i+1].compare("y")==0 ||commandArgs[i+1].compare("1")==0 || commandArgs[i+1].compare("true")==0 ||commandArgs[i+1].compare("TRUE")==0 ||commandArgs[i+1].compare(""))
+			if(commandArgs[i+1].compare("Y")==0 || commandArgs[i+1].compare("y")==0 ||commandArgs[i+1].compare("1")==0 || commandArgs[i+1].compare("true")==0 ||commandArgs[i+1].compare("TRUE")==0 ||commandArgs[i+1].compare("")==0)
 			{
+				cout << "Setting True" << endl;
 				info.config.outputFeatureFilelist = true;
 			}
 			else 
@@ -1165,7 +1166,7 @@ void codeWordGenClusterFeatures(CodeWordGenerationInfo & info)
 	}
 
 	kmeans(allFeatures, info.data.numberOfClusters, info.data.dictionaryLabels, TermCriteria( CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 10, 1.0),
-               5, KMEANS_PP_CENTERS, info.data.dictionary);
+               20, KMEANS_PP_CENTERS, info.data.dictionary);
 
 
 	cout << "Done" << endl;
