@@ -941,6 +941,12 @@ void buildFeatureDescriptors(CodeWordGenerationInfo & info, Mat & inputImage, ve
    switch(info.data.featureDescAlgo)
 	{
 		case FEATURE_DESC_SIFT:
+		{
+			info.data.descriptorExtractor->compute( inputImage, keyPoints, descriptors );
+			descriptors = descriptors * (1/512.0);
+			break;
+		}
+
 		case FEATURE_DESC_SURF:
 		{
 			info.data.descriptorExtractor->compute( inputImage, keyPoints, descriptors );			
